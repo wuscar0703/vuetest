@@ -1,14 +1,13 @@
 // 获取用户信息
-export function getUser () {
+export function getUser() {
   return {
-    // isOpen: false,
     url: 'http://localhost:8080/user',
     type: 'get',
     data: {
       'msg': 'success',
       'code': 0,
       'data': {
-        'id': '@increment',
+        'id': '@increment', 
         'name': '@name', // 随机生成姓名
         'email': '@email', // 随机生成姓名
         'age|10-20': 12

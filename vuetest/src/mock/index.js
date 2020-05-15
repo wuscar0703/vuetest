@@ -21,7 +21,9 @@ function fnCreate (mod, isOpen = true) {
     for (var key in mod) {
       ((res) => {
         if (res.isOpen !== false) {
-          Mock.mock(new RegExp(res.url), res.type, (opts) => {
+          let baseUrl='http://localhost:8080/'
+          let url=baseUrl+res.url
+          Mock.mock(new RegExp(baseUrl), res.type, (opts) => {
             opts['data'] = opts.body ? JSON.parse(opts.body) : null
             delete opts.body
             console.log('\n')

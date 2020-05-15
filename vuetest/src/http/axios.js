@@ -25,22 +25,23 @@ export default function $axios(options) {
         // console.log('准备发送请求...')
         // 2. 带上token
         if (token) {
-          config.headers.accessToken = token
+          // config.headers.accessToken = token
+          config.headers.token = token
         } else {
           // 重定向到登录页面
           router.push('/login')
         }
         // 3. 根据请求方法，序列化传来的参数，根据后端需求是否序列化
         if (config.method === 'post') {
-          if (config.data.__proto__ === FormData.prototype
-            || config.url.endsWith('path')
-            || config.url.endsWith('mark')
-            || config.url.endsWith('patchs')
-          ) {
-
-          } else {
-            config.data = qs.stringify(config.data)
-          }
+          // if (config.data.__proto__ === FormData.prototype
+          //   || config.url.endsWith('path')
+          //   || config.url.endsWith('mark')
+          //   || config.url.endsWith('patchs')
+          // ) {
+          //
+          // } else {
+          //   config.data = qs.stringify(config.data)
+          // }
         }
         return config
       },

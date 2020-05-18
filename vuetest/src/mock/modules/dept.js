@@ -26,6 +26,12 @@ export function batchDelete() {
     }
   }
 }
+//查询机构树
+let findTreeData={
+  "code": 200,
+  "msg": null,
+  "data": {}
+}
 
 // 分页查询
 let findPageData = {
